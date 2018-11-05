@@ -43,7 +43,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", Handler)
-	http.ListenAndServe(":6667", nil)
+	http.ListenAndServe(":3322", nil)
 }
 
 func checkError(err error) {
