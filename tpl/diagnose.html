@@ -2,7 +2,7 @@
 
     <tbody>
     <tr height="27">
-        <td colspan="4">
+        <td colspan="5">
             <p align="center"><span style="font-size:24px">Diagnose</span></p>
         </td>
     </tr>
@@ -22,6 +22,9 @@
         <td>
             <span ><strong>明细</strong></span>
         </td>
+        <td>
+            <span ><strong>错误信息</strong></span>
+        </td>
     </tr>
 
     {{ range $key, $value := . }}
@@ -39,6 +42,9 @@
         </td>
         <td>
             <span ><em>{{$value.Details}}</em></span>
+        </td>
+        <td>
+            <span ><em>{{$value.ErrMsg}}</em></span>
         </td>
     </tr>
     {{end}}

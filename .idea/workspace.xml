@@ -2,60 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad7a2f4a-96da-411d-9645-bcfc5f4f16e6" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/collector/collector.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/collector/common.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/collector/common_test.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/collector/diagnose.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/collector/os_disk.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tpl/common.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tpl/diagnose.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/doc.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/exec.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/funcs.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/helper.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/parse/lex.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/parse/node.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/parse/parse.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/template/template.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/units/COPYING" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/units/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/units/bytes.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/units/doc.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/units/si.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/github.com/alecthomas/units/util.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/COPYING" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/actions.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/app.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/args.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/cmd.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/completions.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/doc.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/envar.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/flags.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/global.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/guesswidth.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/guesswidth_unix.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/model.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/parser.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/parsers.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/templates.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/usage.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/values.go" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/values.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/values_generated.go" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/alauda_trouble_shooting" afterPath="$PROJECT_DIR$/alauda_trouble_shooting" />
-      <change beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
-      <change beforePath="$PROJECT_DIR$/run.sh" afterPath="$PROJECT_DIR$/run.sh" />
-      <change beforePath="$PROJECT_DIR$/tpl/hello.go" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tpl/test1.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tpl/test2.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tpl/tmpl.html" afterPath="$PROJECT_DIR$/tpl/os_disk.html" />
-      <change beforePath="$PROJECT_DIR$/vendor/vendor.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/tpl/diagnose.html" afterPath="$PROJECT_DIR$/tpl/diagnose.html" />
+      <change beforePath="$PROJECT_DIR$/tpl/os_disk.html" afterPath="$PROJECT_DIR$/tpl/os_disk.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -93,9 +44,10 @@
       <file leaf-file-name="common.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/collector/common.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="297">
+              <caret line="96" column="4" lean-forward="false" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
               <folding>
+                <element signature="e#19#182#0" expanded="true" />
                 <element signature="e#2332#2464#0" expanded="false" />
                 <element signature="e#2634#2952#0" expanded="false" />
               </folding>
@@ -115,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="os_disk.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="os_disk.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/os_disk.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1186">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="510">
+              <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -128,8 +80,8 @@
       <file leaf-file-name="diagnose.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tpl/diagnose.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="545">
+              <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -148,8 +100,8 @@
       <file leaf-file-name="diagnose.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/collector/diagnose.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+            <state relative-caret-position="306">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
                 <element signature="e#19#63#0" expanded="true" />
               </folding>
@@ -160,11 +112,21 @@
       <file leaf-file-name="os_disk.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/collector/os_disk.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="94" column="4" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+            <state relative-caret-position="425">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding>
                 <element signature="e#19#63#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -191,8 +153,8 @@
       <find>error</find>
       <find>osDisk.instance = val.Metric[&quot;instance&quot;]</find>
       <find>success</find>
-      <find>mergeTpl</find>
       <find>log.</find>
+      <find>mergeTpl</find>
     </findStrings>
     <replaceStrings>
       <replace>class=&quot;red&quot;</replace>
@@ -225,13 +187,14 @@
         <option value="$PROJECT_DIR$/run.sh" />
         <option value="$PROJECT_DIR$/collector/common_test.go" />
         <option value="$PROJECT_DIR$/collector/common.go" />
-        <option value="$PROJECT_DIR$/collector/os_disk.go" />
-        <option value="$PROJECT_DIR$/collector/diagnose.go" />
         <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/collector/collector.go" />
         <option value="$PROJECT_DIR$/tpl/common.html" />
         <option value="$PROJECT_DIR$/tpl/diagnose.html" />
         <option value="$PROJECT_DIR$/tpl/os_disk.html" />
+        <option value="$PROJECT_DIR$/collector/diagnose.go" />
+        <option value="$PROJECT_DIR$/collector/os_disk.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -463,7 +426,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27010924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36842105" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36842105" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -473,6 +436,25 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27010924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36842105" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15921193" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39903265" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -530,6 +512,7 @@
         <state relative-caret-position="775">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
+            <element signature="e#19#182#0" expanded="true" />
             <element signature="e#2332#2464#0" expanded="false" />
             <element signature="e#2634#2952#0" expanded="false" />
           </folding>
@@ -620,13 +603,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Makefile.common" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/gopkg.in/alecthomas/kingpin.v2/values_generated.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
@@ -728,26 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/collector/os_disk.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="94" column="4" lean-forward="false" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
-          <folding>
-            <element signature="e#19#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collector/diagnose.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
-          <folding>
-            <element signature="e#19#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/hello.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -761,17 +717,6 @@
         <state relative-caret-position="25">
           <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/collector/common.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#2332#2464#0" expanded="false" />
-            <element signature="e#2634#2952#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,18 +748,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/collector/common.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="96" column="4" lean-forward="false" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
+          <folding>
+            <element signature="e#19#182#0" expanded="true" />
+            <element signature="e#2332#2464#0" expanded="false" />
+            <element signature="e#2634#2952#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tpl/diagnose.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="545">
+          <caret line="25" column="27" lean-forward="false" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/os_disk.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1186">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="54" column="13" lean-forward="true" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collector/diagnose.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#19#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/collector/os_disk.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="e#19#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
