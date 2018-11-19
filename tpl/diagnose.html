@@ -1,0 +1,46 @@
+<table cellspacing="0" cellpadding="0" width="100%" border="1">
+
+    <tbody>
+    <tr height="27">
+        <td colspan="4">
+            <p align="center"><span style="font-size:24px">Diagnose</span></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <span ><strong>组件名</strong></span>
+        </td>
+
+        <td>
+            <span ><strong>请求地址</strong></span>
+        </td>
+
+        <td>
+            <span ><strong>状态</strong></span>
+        </td>
+        <td>
+            <span ><strong>明细</strong></span>
+        </td>
+    </tr>
+
+    {{ range $key, $value := . }}
+    <tr>
+        <td>
+            <span ><em>{{$value.GlobalServiceName}}</em></span>
+        </td>
+
+        <td>
+            <span>{{$value.Url}}</span>
+        </td>
+
+        <td>
+            <span  class="red">{{$value.Status}}</span>
+        </td>
+        <td>
+            <span ><em>{{$value.Details}}</em></span>
+        </td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>

@@ -1,0 +1,67 @@
+<table cellspacing="0" cellpadding="0" width="100%" border="1">
+
+    <tbody>
+    <tr height="27">
+        <td colspan="7">
+            <p align="center"><span style="font-size:24px">根盘信息</span></p>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <span ><strong>实例名</strong></span>
+        </td>
+
+        <td>
+            <span ><strong>磁盘总大小(GB)</strong></span>
+        </td>
+
+        <td>
+            <span ><strong>磁盘可用大小(GB)</strong></span>
+        </td>
+        <td>
+            <span ><strong>磁盘使用率(%)</strong></span>
+        </td>
+        <td>
+            <span ><strong>文件系统类型</strong></span>
+        </td>
+        <td>
+            <span ><strong>设备名称</strong></span>
+        </td>
+        <td>
+            <span ><strong>描述</strong></span>
+        </td>
+    </tr>
+
+    {{ range $key, $value := . }}
+    <tr>
+        <td>
+            <span ><em>{{$value.Instance}}</em></span>
+        </td>
+
+        <td>
+            <span>{{$value.TotalSize}}</span>
+        </td>
+
+        <td>
+            <span>{{$value.FreeSize}}</span>
+        </td>
+        <td>
+            <span class="red"><em>{{$value.UsedRate}}%</em></span>
+        </td>
+
+        <td>
+            <span>{{$value.Fstype}}</span>
+        </td>
+
+        <td>
+            <span >{{$value.Device}}</span>
+        </td>
+        <td>
+            <span >{{$value.ErrMsg}}</span>
+        </td>
+    </tr>
+    {{end}}
+
+    </tbody>
+</table>

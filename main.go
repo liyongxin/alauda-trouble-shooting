@@ -2,53 +2,86 @@ package main
 
 import (
 	"fmt"
-	"html/template"
-	"net/http"
+	"strings"
 	"os"
+	"github.com/kataras/iris"
+	"github.com/kataras/iris/middleware/logger"
+	"github.com/kataras/iris/middleware/recover"
+	"gopkg.in/alecthomas/kingpin.v2"
+	"alauda-trouble-shooting/collector"
+	log "github.com/sirupsen/logrus"
 )
 
-type Person struct {
-	Name    string
-	Age     int
-	Emails  []string
-	Company string
-	Role    string
+const (
+	prefixHttp          = "http://"
+	prometheusQueryPath = "/api/v1/query?query="
+)
+
+//log level
+func init()  {
+
+	// Output to stdout instead of the default stderr
+	// Can be any io.Writer, see below for File example
+	log.SetOutput(os.Stdout)
+
+	// Only log the warning severity or above.
+	log.SetLevel(log.InfoLevel)
 }
 
-type OnlineUser struct {
-	User      []*Person
-	LoginTime string
-}
-
-func Handler(w http.ResponseWriter, r *http.Request) {
-	dumx := Person{
-		Name: "zoro",
-		Age: 27,
-		Emails: []string{"dg@gmail.com", "dk@hotmail.com"},
-		Company: "Omron",
-		Role: "SE"}
-
-	chxd := Person{Name: "chxd", Age: 27, Emails: []string{"test@gmail.com", "d@hotmail.com"}}
-
-	onlineUser := OnlineUser{User: []*Person{&dumx, &chxd}}
-
-	//t := template.New("Person template")
-	//t, err := t.Parse(templ)
-	t, err := template.ParseFiles("tpl/tmpl.html")
-	checkError(err)
-
-	err = t.Execute(w, onlineUser)
-	checkError(err)
+//http handler
+func Handler(ctx iris.Context) {
+	res := collector.Collect()
+	ctx.HTML(res)
 }
 
 func main() {
-	http.HandleFunc("/", Handler)
-	http.ListenAndServe(":3322", nil)
+	var (
+		prometheusAddress = kingpin.Flag("prometheus.address", "Address on which to expose metrics and web interface.").Required().String()
+		webServer         = kingpin.Command("webServer", "run webServer default listen on port 3322, you can run with --port to set listen port, then curl $HOSTIP:3322 to get website page.")
+		webServerPort     = webServer.Flag("port", "port on webservice to expose").Default("3322").String()
+		healthCheck       = kingpin.Command("healthCheck", "check all functional module, include node, etcd, diagnose.")
+		moduleName        = healthCheck.Arg("name", "check by module, for example \"alauda_trouble_shooting healthCheck etcd\". ").String()
+	)
+	kingpin.HelpFlag.Short('h')
+	kingpin.Parse()
+
+	//init global prometheus url
+	checkAndInitConfig(*prometheusAddress)
+
+	switch kingpin.MustParse(kingpin.Parse(), nil) {
+	// command selector
+	case webServer.FullCommand():
+		log.Infof("webServer starting with prometheus address %s", *prometheusAddress)
+
+		app := iris.New()
+		app.Logger().SetLevel("info")
+		// Optionally, add two built'n handlers
+		// that can recover from any http-relative panics
+		// and log the requests to the terminal.
+		app.Use(recover.New())
+		app.Use(logger.New())
+
+		// Method:   GET
+		// Resource: http://localhost:8080
+		app.Handle("GET", "/", Handler)
+		app.Run(iris.Addr(fmt.Sprintf(":%s", *webServerPort)), iris.WithoutServerError(iris.ErrServerClosed))
+
+	case healthCheck.FullCommand():
+		if moduleName == nil || *moduleName == "" {
+			log.Infoln("healthCheck all")
+
+		} else {
+			log.Infof("healthCheck %s， not supported for now!", *moduleName)
+		}
+	}
 }
 
-func checkError(err error) {
-	if err != nil {
-		fmt.Println("Fatal error ", err.Error())
+func checkAndInitConfig(prometheusUrl string) {
+	if strings.HasPrefix(prometheusUrl, prefixHttp) {
+		collector.PrometheusConfig.Address = fmt.Sprintf("%s%s", prometheusUrl, prometheusQueryPath)
+	} else {
+		log.Fatalf("prometheus.address error, must start with %s", prefixHttp)
 		os.Exit(1)
 	}
+
 }
