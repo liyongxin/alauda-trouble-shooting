@@ -32,7 +32,6 @@ type ResultValue struct {
 	Result []Result `json:"result"`
 }
 
-
 type Result struct {
 	Metric map[string]string `json:"metric"`
 	Value  Value             `json:"value"`
@@ -187,8 +186,8 @@ func handleSizeUnit(val string, unit string) (ival int64, err error) {
 }
 
 func Round(f float64, n int) float64 {
-	pow10_n := math.Pow10(n)
-	return math.Trunc((f+0.5/pow10_n)*pow10_n) / pow10_n
+	pow10 := math.Pow10(n)
+	return math.Trunc((f+0.5/pow10)*pow10) / pow10
 }
 
 func useRate(total,free int64, n int) float64{

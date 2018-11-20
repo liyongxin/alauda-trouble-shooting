@@ -80,7 +80,7 @@ func checkAndInitConfig(prometheusUrl string) {
 	if strings.HasPrefix(prometheusUrl, prefixHttp) {
 		collector.PrometheusConfig.Address = fmt.Sprintf("%s%s", prometheusUrl, prometheusQueryPath)
 	} else {
-		log.Fatalf("prometheus.address error, must start with %s", prefixHttp)
+		log.Fatalf("prometheus.address not valid, must start with %s", prefixHttp)
 		os.Exit(1)
 	}
 

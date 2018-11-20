@@ -75,3 +75,8 @@ func Collect() string{
 	html, _ := mergeTpl("tpl/common.html", template.HTML(strings.Join(resArr,"")))
 	return html
 }
+
+func FileData() string {
+
+	return ""
+}
