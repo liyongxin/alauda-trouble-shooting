@@ -2,7 +2,7 @@
 
     <tbody>
     <tr height="27">
-        <td colspan="5">
+        <td colspan="6">
             <p align="center"><span style="font-size:24px">Diagnose</span></p>
         </td>
     </tr>
@@ -25,6 +25,9 @@
         <td>
             <span ><strong>错误信息</strong></span>
         </td>
+        <td>
+            <span ><strong>指标状态</strong></span>
+        </td>
     </tr>
 
     {{ range $key, $value := . }}
@@ -45,6 +48,9 @@
         </td>
         <td>
             <span ><em>{{$value.ErrMsg}}</em></span>
+        </td>
+        <td>
+            <span class="{{$value.MetricStatus}}">{{$value.MetricStatus}}</span>
         </td>
     </tr>
     {{end}}

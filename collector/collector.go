@@ -13,14 +13,14 @@ type troubleCollector struct {
 }
 
 type CollectResult struct {
-	Html string
+	Data string
 }
 
 // Collector is the interface a collector has to implement.
 type Collector interface {
 	// Merge data & template.
 	Merge(chan *CollectResult) error
-	Data() error
+	FileData(chan *CollectResult) error
 }
 
 var (
@@ -47,10 +47,12 @@ func newTroubleCollector() (*troubleCollector, error) {
 
 var PrometheusConfig struct {
 	Address string
+	Cmd  string
 }
 
-
-func Collect() string{
+//core collect
+func Collect(cmd string) (res string){
+	webServer := "webServer"
 	collectors, err := newTroubleCollector()
 	if err != nil {
 		log.Errorln("get trouble collector err,", err)
@@ -61,7 +63,11 @@ func Collect() string{
 	resCh := make(chan *CollectResult, length)
 	for _, col := range collectors.Collectors {
 		go func(ch chan *CollectResult, c Collector) {
-			c.Merge(resCh)
+			if cmd == webServer{
+				c.Merge(resCh)
+			}else{
+				c.FileData(resCh)
+			}
 			wg.Done()
 		}(resCh, col)
 	}
@@ -70,13 +76,15 @@ func Collect() string{
 	close(resCh)
 	var resArr  []string
 	for res := range resCh{
-		resArr = append(resArr, res.Html)
+		resArr = append(resArr, res.Data)
+		//log.Error(res.Data)
 	}
-	html, _ := mergeTpl("tpl/common.html", template.HTML(strings.Join(resArr,"")))
-	return html
-}
-
-func FileData() string {
-
-	return ""
+	if cmd == webServer{
+		res, _ = mergeTpl("tpl/common.html", template.HTML(strings.Join(resArr,"")))
+	}else{
+		res, _ = mergeTpl("tpl/common.txt", template.HTML(strings.Join(resArr,"\n\n")))
+		filename := createFile(res)
+		log.Info("diagnose data file ", filename)
+	}
+	return res
 }

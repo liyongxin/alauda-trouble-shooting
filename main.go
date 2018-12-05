@@ -15,6 +15,8 @@ import (
 const (
 	prefixHttp          = "http://"
 	prometheusQueryPath = "/api/v1/query?query="
+	webServerCmd = "webServer"
+	diagnoseCmd = "diagnose"
 )
 
 //log level
@@ -30,16 +32,16 @@ func init()  {
 
 //http handler
 func Handler(ctx iris.Context) {
-	res := collector.Collect()
+	res := collector.Collect(webServerCmd)
 	ctx.HTML(res)
 }
 
 func main() {
 	var (
 		prometheusAddress = kingpin.Flag("prometheus.address", "Address on which to expose metrics and web interface.").Required().String()
-		webServer         = kingpin.Command("webServer", "run webServer default listen on port 3322, you can run with --port to set listen port, then curl $HOSTIP:3322 to get website page.")
+		webServer         = kingpin.Command(webServerCmd, "run webServer default listen on port 3322, you can run with --port to set listen port, then curl $HOSTIP:3322 to get website page.")
 		webServerPort     = webServer.Flag("port", "port on webservice to expose").Default("3322").String()
-		healthCheck       = kingpin.Command("healthCheck", "check all functional module, include node, etcd, diagnose.")
+		healthCheck       = kingpin.Command(diagnoseCmd, "check all functional module, include node, etcd, diagnose.")
 		moduleName        = healthCheck.Arg("name", "check by module, for example \"alauda_trouble_shooting healthCheck etcd\". ").String()
 	)
 	kingpin.HelpFlag.Short('h')
@@ -68,10 +70,10 @@ func main() {
 
 	case healthCheck.FullCommand():
 		if moduleName == nil || *moduleName == "" {
-			log.Infoln("healthCheck all")
-
+			log.Infoln("diagnose all")
+			collector.Collect(diagnoseCmd)
 		} else {
-			log.Infof("healthCheck %s， not supported for now!", *moduleName)
+			log.Infof("diagnose %s， not supported for now!", *moduleName)
 		}
 	}
 }
@@ -80,7 +82,7 @@ func checkAndInitConfig(prometheusUrl string) {
 	if strings.HasPrefix(prometheusUrl, prefixHttp) {
 		collector.PrometheusConfig.Address = fmt.Sprintf("%s%s", prometheusUrl, prometheusQueryPath)
 	} else {
-		log.Fatalf("prometheus.address not valid, must start with %s", prefixHttp)
+		log.Fatalf("prometheus.address error, must start with %s", prefixHttp)
 		os.Exit(1)
 	}
 

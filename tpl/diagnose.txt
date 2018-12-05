@@ -1,0 +1,7 @@
+############################################
+********* 组件diagnose结果 *******************
+指标状态 | 组件名称 | 明细 | 错误信息
+{{ range $key, $value := . }}
+{{$value.MetricStatus}} | {{$value.GlobalServiceName}} | {{$value.Details| html}} | {{$value.ErrMsg}}
+{{end}}
+############################################

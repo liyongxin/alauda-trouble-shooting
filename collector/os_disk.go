@@ -16,6 +16,7 @@ type osDisk struct {
 	FreeSize  int64
 	UsedRate  float64
 	Status    string
+	MetricStatus string
 	ErrMsg    string
 }
 
@@ -36,24 +37,24 @@ func NewOsDiskCollector() (Collector, error) {
 }
 
 func (os *osDiskCollector) Merge(ch chan *CollectResult) error {
-	query := &PromeQuery{
-		Query: os.Query,
-	}
-	results, err := multiPrometheusRequest(query)
-	if err != nil {
-		log.Errorf("osDisk metric error,", err.Error())
-	}
-	data := transOsDisk(results)
+	data := osDiskData(os.Query)
 	//log.Infof("+v", data)
 	html, _ := mergeTpl("tpl/os_disk.html", data)
 
 	//log.Infof("+v", *results["nodeFilesystemSize"])
 
-	ch <- &CollectResult{Html: html}
+	ch <- &CollectResult{Data: html}
 	return nil
 }
 
-func (*osDiskCollector) Data() error {
+func (os *osDiskCollector) FileData(ch chan *CollectResult) error {
+	data := osDiskData(os.Query)
+	//log.Infof("+v", data)
+	txt, _ := mergeTpl("tpl/os_disk.txt", data)
+
+	//log.Infof("+v", *results["nodeFilesystemSize"])
+
+	ch <- &CollectResult{Data: txt}
 	return nil
 }
 
@@ -84,12 +85,14 @@ func transOsDisk(data map[string]*HttpGetRes) (res []osDisk) {
 				res = append(res, disk)
 				continue
 			}
+			useRate := useRate(totalSize, freeSize, 3)
 			osDisk := osDisk{
 				Status:    nodeFilesystemSize.Status,
 				Instance:  val.Metric["instance"],
 				TotalSize: totalSize,
 				FreeSize: freeSize,
-				UsedRate: useRate(totalSize, freeSize, 3),
+				UsedRate: useRate,
+				MetricStatus: osDiskMetricStatus(useRate),
 				Device: val.Metric["device"],
 				Fstype: val.Metric["fstype"],
 			}
@@ -98,6 +101,7 @@ func transOsDisk(data map[string]*HttpGetRes) (res []osDisk) {
 	} else {
 		osDisk := osDisk{
 			Status: nodeFilesystemSize.Status,
+			MetricStatus: metricStatusBad,
 			ErrMsg: nodeFilesystemSize.Message,
 		}
 		res = append(res, osDisk)
@@ -111,6 +115,7 @@ func checkError(err error) (b bool, disk osDisk){
 	if err != nil {
 		disk = osDisk{
 			Status: runtimeError,
+			MetricStatus: metricStatusBad,
 			ErrMsg: err.Error(),
 		}
 		b = true
@@ -134,4 +139,25 @@ func helpTransDisk(fileFree *HttpGetRes, instance string) (res *Result, err erro
 		}
 	}
 	return res, err
+}
+
+func osDiskData(query map[string]string) (res []osDisk){
+	q := &PromeQuery{
+		Query: query,
+	}
+	results, err := multiPrometheusRequest(q)
+	if err != nil {
+		log.Errorf("osDisk metric error,", err.Error())
+	}
+	return transOsDisk(results)
+}
+
+func osDiskMetricStatus(f float64) (res string) {
+	if f < 70{
+		return metricStatusOK
+	}else if f > 90 {
+		return metricStatusBad
+	}else {
+		return metricStatusWarn
+	}
 }

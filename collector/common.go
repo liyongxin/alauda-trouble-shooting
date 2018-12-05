@@ -13,12 +13,16 @@ import (
 	log "github.com/sirupsen/logrus"
 	"strconv"
 	"math"
+	"os"
 )
 
 const (
 	requestSuccess = "success"
-	requestError = "req_error"
+//	requestError = "req_error"
 	runtimeError = "runtime_error"
+	metricStatusOK = "OK"
+	metricStatusWarn = "WARNING"
+	metricStatusBad = "ERROR"
 )
 
 type HttpGetRes struct {
@@ -31,6 +35,7 @@ type ResultValue struct {
 	ResultType string `json:"resultType"`
 	Result []Result `json:"result"`
 }
+
 
 type Result struct {
 	Metric map[string]string `json:"metric"`
@@ -153,15 +158,22 @@ func multiPrometheusRequest(query *PromeQuery) (map[string]*HttpGetRes, error){
 	return res,nil
 }
 
+func unescaped (x string) interface{} {
+	return template.HTML(x)
+}
+
 //merge tpl and data
 //returns html strings
 func mergeTpl(path string, data interface{}) (string, error){
 	t, err := template.ParseFiles(path)
+	t = t.Funcs(template.FuncMap{"unescaped": unescaped})
+
 	if err != nil {
 		return err.Error(), err
 	}
 	var buffer  bytes.Buffer
 	writer := bufio.NewWriter(&buffer)
+
 	err = t.Execute(writer, data)
 	writer.Flush()
 	return buffer.String(), nil
@@ -193,4 +205,26 @@ func Round(f float64, n int) float64 {
 func useRate(total,free int64, n int) float64{
 	sRate := float64(free)/float64(total)
 	return (1 - Round(sRate, n)) * 100
+}
+
+func createFile(data string) (filename string){
+	now := time.Now()
+	filename = fmt.Sprintf("%d-%d-%dT-%d-%d-%d.txt",now.Year(),now.Month(),now.Day(),now.Hour(),now.Minute(),now.Second())
+	f, _ := os.Create(filename)
+	w := bufio.NewWriter(f)
+	w.WriteString(data)
+	w.Flush()
+	f.Close()
+	return filename
+}
+
+/**
+ * 判断文件是否存在  存在返回 true 不存在返回false
+ */
+func checkFileExist(filename string) bool {
+	var exist = true
+	if _, err := os.Stat(filename); os.IsNotExist(err) {
+		exist = false
+	}
+	return exist
 }

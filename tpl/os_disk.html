@@ -2,7 +2,7 @@
 
     <tbody>
     <tr height="27">
-        <td colspan="7">
+        <td colspan="8">
             <p align="center"><span style="font-size:24px">根盘信息</span></p>
         </td>
     </tr>
@@ -30,6 +30,9 @@
         </td>
         <td>
             <span ><strong>错误信息</strong></span>
+        </td>
+        <td>
+            <span ><strong>指标状态</strong></span>
         </td>
     </tr>
 
@@ -59,6 +62,9 @@
         </td>
         <td>
             <span >{{$value.ErrMsg}}</span>
+        </td>
+        <td>
+            <span class="{{$value.MetricStatus}}">{{$value.MetricStatus}}</span>
         </td>
     </tr>
     {{end}}

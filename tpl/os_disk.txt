@@ -1,0 +1,8 @@
+############################################
+********* 磁盘指标 *******************
+指标状态 | 实例名称 | 设备名称 | 磁盘总大小(GB) | 磁盘可用大小(GB) | 磁盘使用率(%) | 错误明细
+{{ range $key, $value := . }}
+{{$value.MetricStatus}} | {{$value.Instance}} | {{$value.Device}} | {{$value.TotalSize}} | {{$value.FreeSize}} | {{$value.UsedRate}}% | {{$value.ErrMsg}}
+{{end}}
+############################################
+
